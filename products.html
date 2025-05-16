@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medical Equipment Products | HORA Biomedical Systems</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./hora.png" alt="Logo" />
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="products.html" class="active">Medical Equipments</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li class="user-icon">
+                    <a href="#"><i class="fas fa-user"></i></a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="back-to-home-section">
+            <a href="index.html" class="back-to-home-btn">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </section>
+
+        <section class="products-section">
+            <div class="products-container">
+                <h1 class="section-title">Our Medical Equipment Products</h1>
+                <p class="section-subtitle">High-quality biomedical equipment for healthcare professionals</p>
+                
+                <div class="product-categories">
+                    <div class="category-filter">
+                        <button class="filter-btn active" data-category="all">All Products</button>
+                        <button class="filter-btn" data-category="diagnostic"> ICU Equipments</button>
+                        <button class="filter-btn" data-category="treatment">CSSD Equipments</button>
+                        <button class="filter-btn" data-category="monitoring">Medical Accessories</button>
+                        <button class="filter-btn" data-category="laboratory">Rental Medical Equipment</button>
+
+                         <button class="filter-btn active" data-category="all">NICU Equipments</button>
+                        <button class="filter-btn" data-category="diagnostic"> Hospital Furnitures</button>
+                        <button class="filter-btn" data-category="treatment">Medical Consumables</button>
+                        <button class="filter-btn" data-category="monitoring">Biomedical Service Contract</button>
+                        <button class="filter-btn" data-category="laboratory">OT Equipments</button>
+
+
+
+                         <button class="filter-btn active" data-category="all">Turnkey Projects</button>
+                        <button class="filter-btn" data-category="diagnostic"> Home care support</button>
+                        <button class="filter-btn" data-category="treatment">Modular Operation Theatre</button>
+                        <button class="filter-btn" data-category="monitoring">Radiology Equipments</button>
+                        <button class="filter-btn" data-category="laboratory">Medical Gas Pipeline</button>
+                    </div>
+                </div>
+
+                <div class="products-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card" data-category="diagnostic">
+                        <a href="product-detail.html?id=1">
+                            <div class="product-image">
+                                <img src="https://www.shimadzu.com/an/products/medical/img/xray_top.jpg" alt="Digital X-ray Machine">
+                            </div>
+                            <div class="product-info">
+                                <h3>Digital X-ray Machine</h3>
+                                <p class="product-category">Diagnostic Equipment</p>
+                                <p class="product-description">High-resolution digital imaging system for accurate diagnostics</p>
+                                <button class="view-details-btn">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card" data-category="monitoring">
+                        <a href="product-detail.html?id=2">
+                            <div class="product-image">
+                                <img src="https://5.imimg.com/data5/SELLER/Default/2021/12/QT/YD/JA/3033603/multi-parameter-patient-monitor-500x500.jpg" alt="Patient Monitor">
+                            </div>
+                            <div class="product-info">
+                                <h3>Multi-Parameter Patient Monitor</h3>
+                                <p class="product-category">Monitoring Equipment</p>
+                                <p class="product-description">Continuous monitoring of vital signs including ECG, SpO2, NIBP, and temperature</p>
+                                <button class="view-details-btn">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card" data-category="laboratory">
+                        <a href="product-detail.html?id=3">
+                            <div class="product-image">
+                                <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/YD/VA/GT/3033603/biochemistry-analyzer-500x500.jpg" alt="Biochemistry Analyzer">
+                            </div>
+                            <div class="product-info">
+                                <h3>Biochemistry Analyzer</h3>
+                                <p class="product-category">Laboratory Equipment</p>
+                                <p class="product-description">Fully automated analyzer for clinical chemistry testing</p>
+                                <button class="view-details-btn">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card" data-category="treatment">
+                        <a href="product-detail.html?id=4">
+                            <div class="product-image">
+                                <img src="https://www.bplmedicaltechnologies.com/wp-content/uploads/2020/03/Dialysis-Machine-1.jpg" alt="Dialysis Machine">
+                            </div>
+                            <div class="product-info">
+                                <h3>Hemodialysis Machine</h3>
+                                <p class="product-category">Treatment Equipment</p>
+                                <p class="product-description">Advanced dialysis system with safety monitoring features</p>
+                                <button class="view-details-btn">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card" data-category="diagnostic">
+                        <a href="product-detail.html?id=5">
+                            <div class="product-image">
+                                <img src="https://www.siemens-healthineers.com/en-in/assets/images/ct/somatom-go/somatom-go-all-700x394.jpg" alt="CT Scanner">
+                            </div>
+                            <div class="product-info">
+                                <h3>CT Scanner</h3>
+                                <p class="product-category">Diagnostic Equipment</p>
+                                <p class="product-description">16-slice CT scanner with advanced imaging capabilities</p>
+                                <button class="view-details-btn">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card" data-category="monitoring">
+                        <a href="product-detail.html?id=6">
+                            <div class="product-image">
+                                <img src="https://5.imimg.com/data5/SELLER/Default/2021/12/IB/EX/GT/3033603/ventilator-500x500.jpg" alt="Ventilator">
+                            </div>
+                            <div class="product-info">
+                                <h3>ICU Ventilator</h3>
+                                <p class="product-category">Monitoring Equipment</p>
+                                <p class="product-description">Critical care ventilator with multiple ventilation modes</p>
+                                <button class="view-details-btn">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>HORA Biomedical Systems</h3>
+      <p>Your Partner in Biomedical Excellence</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="products.html">Products</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <ul>
+        <li><i class="fas fa-map-marker-alt"></i> 123 Biomedical Ave, Science City</li>
+        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+        <li><i class="fas fa-envelope"></i> info@horabiomedical.com</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2023 HORA Biomedical Systems. All rights reserved.</p>
+  </div>
+</footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Product filtering functionality
+        $(document).ready(function(){
+            $('.filter-btn').click(function(){
+                $('.filter-btn').removeClass('active');
+                $(this).addClass('active');
+                
+                const category = $(this).data('category');
+                
+                if(category === 'all') {
+                    $('.product-card').show();
+                } else {
+                    $('.product-card').hide();
+                    $(`.product-card[data-category="${category}"]`).show();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

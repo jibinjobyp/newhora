@@ -883,7 +883,7 @@ body {
     margin-bottom: 2rem;
 }
 
-.filter-btn {
+/* .filter-btn {
     padding: 1.6rem 2.2rem;
     background-color: #f0f0f0;
     border: none;
@@ -892,7 +892,36 @@ body {
     transition: all 0.3s;
     font-weight: 500;
     color: #555;
+} */
+
+
+
+.filter-btn {
+    display: inline-block;
+    padding: 1.8rem 2.5rem;
+    background-color: #55518E;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 200px;
+    
 }
+
+.filter-btn a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+
+
+
+
 
 .filter-btn:hover, .filter-btn.active {
     background-color: #4BC2BA;
@@ -1355,7 +1384,8 @@ body {
 
 /* Footer Styles */
 .footer {
-  background-color: #55518E;
+  /* background-color: #55518E; */
+  background-color: rgb(63, 64, 60);
   color: white;
   padding: 3rem 0 0;
   font-family: 'Cal Sans', sans-serif;
@@ -1903,4 +1933,11 @@ body {
     .slick-dots li button:before {
         font-size: 12px !important;
     }
+}
+
+
+
+.footer-column img{
+    height: 7rem;
+    width: 7rem;
 }

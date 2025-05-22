@@ -2151,7 +2151,7 @@ body {
   }
   
   .hero-content h1 .part1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin-bottom: -20px;
   }
   
@@ -2203,9 +2203,9 @@ body {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 316px) {
   .hero-content h1 .part1 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: -15px;
   }
   
@@ -2317,11 +2317,6 @@ body {
 
   
 }
-
-
-
-
-
 
 
 

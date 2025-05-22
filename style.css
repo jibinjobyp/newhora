@@ -1548,6 +1548,8 @@ body {
     align-items: center;
     font-size: 0.9rem;
     color: #777;
+    
+    /* background: red; */
 }
 
 .keyword {
@@ -1555,9 +1557,11 @@ body {
     color: #2e7d32;
     padding: 4px 10px;
     border-radius: 20px;
-    margin: 4px 8px 4px 0;
+    /* margin: 4px 8px 4px 10px; */
+    
     font-weight: 500;
-    white-space: nowrap;
+    white-space: wrap;
+    
 }
 
 /* Responsive adjustments */
@@ -2288,6 +2292,12 @@ body {
     max-width: 80%;
     margin: 0 auto 2rem;
   }
+
+
+  .product-detail-content{
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* Tablet landscape specific adjustments */
@@ -2304,4 +2314,29 @@ body {
     font-size: 2.5rem;
     margin-bottom: 10px;
   }
+
+  
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

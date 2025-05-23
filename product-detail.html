@@ -53,10 +53,10 @@
             </a>
         </section> -->
 
-      <section class="product-detail-section">
+      <!-- <section class="product-detail-section">
         <div class="product-detail-container">
-          <div class="product-detail-content">
-            <!-- <div class="product-gallery">
+          <div class="product-detail-content"> -->
+      <!-- <div class="product-gallery">
               <div class="main-image-slider">
               
               </div>
@@ -65,7 +65,7 @@
               </div>
             </div> -->
 
-            <div class="product-info">
+      <!-- <div class="product-info">
               <h1 id="product-title">Loading...</h1>
               <p class="product-category">
                 <strong>Category:</strong> <span id="product-category"></span>
@@ -78,6 +78,29 @@
                 <div class="keywords">
                   <strong>Keywords:</strong>
                   <span id="product-keywords"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+      <section class="product-detail-section">
+        <div class="product-detail-container">
+          <div class="product-detail-content">
+            <div class="product-info">
+              <h1 id="product-title">Loading...</h1>
+              <p class="product-category">
+                <strong>Category:</strong> <span id="product-category"></span>
+              </p>
+
+              <div class="product-description">
+                <h2 id="product-headline"></h2>
+                <p id="product-description"></p>
+
+                <!-- This div will contain the dynamic equipment details -->
+                <div class="equipment-details" id="equipment-details">
+                  <!-- Content will be populated by JavaScript -->
                 </div>
               </div>
             </div>
@@ -143,285 +166,808 @@
     <script>
       // Products object (same as your original)
       const products = {
+        //         1: {
+        //           title: "Digital X-ray Machine",
+        //           category: "Medical Imaging",
+        //           images: [
+        //           ,
+        //           ],
+        //           headline: "Advanced ICU Equipment Solutions for Critical Care Units",
+        //           description: `Our ICU equipment is engineered to meet the highest standards of patient care in intensive care units.
+        // We supply a wide range of life-saving devices including multi-parameter monitors, ventilators, infusion pumps,
+        // defibrillators, and patient beds. Designed for high-dependency units, our products ensure continuous monitoring
+        // and critical life support with precision and reliability.`,
+        //           keywords: [
+        //             "ICU equipment",
+        //             "critical care devices",
+        //             "patient monitoring systems",
+        //             "hospital ICU solutions",
+        //           ],
+        //         },
         1: {
-          title: "Digital X-ray Machine",
-          category: "Medical Imaging",
+          title: "Intensive Care Unit (ICU) Equipment",
+          category: "Critical Care & Monitoring",
           images: [
-          ,
+            "https://example.com/images/icu_1.jpg",
+            "https://example.com/images/icu_2.jpg",
+            "https://example.com/images/icu_3.jpg",
+            "https://example.com/images/icu_4.jpg",
           ],
-          headline: "Advanced ICU Equipment Solutions for Critical Care Units",
-          description: `Our ICU equipment is engineered to meet the highest standards of patient care in intensive care units. 
-We supply a wide range of life-saving devices including multi-parameter monitors, ventilators, infusion pumps, 
-defibrillators, and patient beds. Designed for high-dependency units, our products ensure continuous monitoring 
-and critical life support with precision and reliability.`,
-          keywords: [
-            "ICU equipment",
-            "critical care devices",
-            "patient monitoring systems",
-            "hospital ICU solutions",
-          ],
+          headline:
+            "Advanced Life-Saving Technology in the Intensive Care Unit (ICU)",
+          description: `Our Intensive Care Unit (ICU) is equipped with advanced life-saving technology to provide continuous, high-level care for critically ill patients. Each unit is designed to support complex medical needs with precision, safety, and efficiency.`,
+          equipmentDetails: {
+            title: "Key Equipment Includes",
+            items: [
+              {
+                name: "Multiparameter Patient Monitors",
+                description:
+                  "Continuous monitoring of vital signs including heart rate, blood pressure, oxygen saturation, respiratory rate, and more—ensuring timely interventions.",
+              },
+              {
+                name: "Ventilators (Invasive & Non-Invasive)",
+                description:
+                  "Advanced mechanical ventilators support patients with respiratory failure, providing controlled oxygen delivery and breathing assistance.",
+              },
+              {
+                name: "Infusion and Syringe Pumps",
+                description:
+                  "Accurate delivery of medication and fluids, essential for managing critical therapies like inotropes, sedatives, and antibiotics.",
+              },
+              {
+                name: "Defibrillators and Cardiac Resuscitation Units",
+                description:
+                  "Life-saving equipment for managing cardiac emergencies, equipped with ECG, AED, and manual defibrillation functions.",
+              },
+              {
+                name: "Portable X-Ray and Ultrasound Machines",
+                description:
+                  "Bedside imaging capabilities allow real-time diagnostics without patient transport, reducing risk and enhancing care.",
+              },
+              {
+                name: "High-Flow Nasal Cannula (HFNC) Systems",
+                description:
+                  "Delivers heated, humidified oxygen at high flow rates for respiratory support, especially in acute hypoxemic respiratory failure.",
+              },
+              {
+                name: "ICU Beds with Integrated Monitoring Systems",
+                description:
+                  "Motorized, fully adjustable beds with built-in safety features and monitoring to enhance both patient comfort and clinical support.",
+              },
+              {
+                name: "Advanced Air Filtration & Negative Pressure Rooms",
+                description:
+                  "Infection control systems to maintain sterile air quality and manage isolation protocols for infectious patients.",
+              },
+            ],
+          },
         },
+
         2: {
-          title: "NICU Equipment",
-          category: "Neonatal Intensive Care",
-          images: [
-            "https://www.shimadzu.com/an/products/medical/img/xray_top.jpg",
-            "https://www.shimadzu.com/an/products/medical/img/xray_side.jpg",
-            "https://www.shimadzu.com/an/products/medical/img/xray_console.jpg",
-            "https://www.shimadzu.com/an/products/medical/img/xray_tech.jpg",
-          ],
-          headline: "Reliable NICU Equipment for Neonatal Intensive Care",
-          description: `We offer cutting-edge NICU equipment to support the specialized
-needs of premature and critically ill newborns. Our range includes
-incubators, neonatal ventilators, phototherapy units, CPAP
-machines, and infant warmers — carefully selected for safety,
-comfort, and performance. Ensure your neonatal unit meets all
-care standards with our advanced solutions.`,
-          keywords: [
-            "NICU equipment",
-            "neonatal incubators",
-            "infant ventilators",
-            "newborn intensive care solutions",
-          ],
-        },
-        3: {
-          title: "OT Equipment",
-          category: "Surgical Solutions",
-          images: [
-            "https://www.shimadzu.com/an/products/medical/img/xray_top.jpg", // Replace with actual OT images later
-            "https://www.shimadzu.com/an/products/medical/img/xray_side.jpg",
-            "https://www.shimadzu.com/an/products/medical/img/xray_console.jpg",
-            "https://www.shimadzu.com/an/products/medical/img/xray_tech.jpg",
-          ],
-          headline: "High-Performance Operation Theatre Equipment",
-          description: `Equip your surgical suites with our comprehensive OT equipment solutions. 
-We provide state-of-the-art surgical tables, shadowless operating lights, anesthesia machines, 
-electrosurgical units, and ceiling pendants. Each product is designed for reliability, sterility, 
-and ergonomic functionality to enhance surgical precision.`,
-          keywords: [
-            "OT equipment",
-            "surgical instruments",
-            "operation theatre setup",
-            "anesthesia machines",
-          ],
-        },
-        4: {
           title: "CSSD Equipment",
           category: "Sterilization & Hygiene",
           images: [
-            "https://www.shimadzu.com/an/products/medical/img/xray_top.jpg", // Replace with actual CSSD images later
-            "https://www.shimadzu.com/an/products/medical/img/xray_side.jpg",
-            "https://www.shimadzu.com/an/products/medical/img/xray_console.jpg",
-            "https://www.shimadzu.com/an/products/medical/img/xray_tech.jpg",
+            "https://example.com/images/cssd_1.jpg",
+            "https://example.com/images/cssd_2.jpg",
+            "https://example.com/images/cssd_3.jpg",
+            "https://example.com/images/cssd_4.jpg",
           ],
           headline: "Central Sterile Supply Department (CSSD) Equipment",
-          description: `Ensure hospital hygiene and infection control with our full range of 
-CSSD equipment. We supply autoclaves, ultrasonic cleaners, ETО sterilizers, and packaging units 
-to support safe instrument reprocessing. Ideal for hospitals and clinics aiming to meet 
-international sterilization standards.`,
-          keywords: [
-            "CSSD equipment",
-            "hospital sterilization units",
-            "autoclaves",
-            "medical instrument disinfection",
+          description: `Our Central Sterile Supply Department (CSSD) is equipped with state-of-the-art sterilization and disinfection equipment to ensure the highest standards of infection control and patient safety. The department is designed to support efficient and sterile processing of surgical instruments, medical devices, and other critical healthcare tools.`,
+          equipmentDetails: {
+            title: "Equipment Includes",
+            items: [
+              {
+                name: "Washer-Disinfectors",
+                description:
+                  "Automated machines that thoroughly clean and disinfect instruments, removing organic and inorganic residues.",
+              },
+              {
+                name: "Ultrasonic Cleaners",
+                description:
+                  "Uses high-frequency sound waves to remove fine debris from delicate instruments, ensuring thorough pre-cleaning.",
+              },
+              {
+                name: "Autoclaves (Steam Sterilizers)",
+                description:
+                  "High-pressure steam sterilizers for effective microbial decontamination of surgical instruments and reusable items.",
+              },
+              {
+                name: "ETO Sterilizers (Ethylene Oxide Sterilization)",
+                description:
+                  "Used for heat-sensitive medical equipment, ensuring complete sterilization without damaging delicate materials.",
+              },
+              {
+                name: "Plasma Sterilizers (Low-Temperature Sterilizers)",
+                description:
+                  "A modern alternative for heat- and moisture-sensitive devices, using hydrogen peroxide gas plasma technology.",
+              },
+              {
+                name: "Sterile Storage Cabinets",
+                description:
+                  "Designed to maintain the sterility of instruments until they are needed, with controlled temperature and humidity.",
+              },
+              {
+                name: "Packing and Sealing Stations",
+                description:
+                  "Ergonomically designed workspaces for careful inspection, packaging, and labeling of sterilized instruments.",
+              },
+              {
+                name: "Trolley and Instrument Tracking Systems",
+                description:
+                  "Ensures traceability and accountability through barcode or RFID tracking, improving workflow and safety.",
+              },
+            ],
+          },
+        },
+
+        3: {
+          title: "Medical Accessories",
+          category: "Clinical Support & Patient Care",
+          images: [
+            "https://example.com/images/accessories_1.jpg",
+            "https://example.com/images/accessories_2.jpg",
+            "https://example.com/images/accessories_3.jpg",
+            "https://example.com/images/accessories_4.jpg",
           ],
+          headline: "Comprehensive Range of Essential Medical Accessories",
+          description: `We offer a comprehensive range of medical accessories essential for supporting day-to-day clinical operations, ensuring the comfort, safety, and well-being of patients and healthcare providers. Our accessories are sourced from trusted manufacturers and meet stringent quality and hygiene standards.`,
+          equipmentDetails: {
+            title: "Key Medical Accessories Include",
+            items: [
+              {
+                name: "Stethoscopes and Blood Pressure Monitors",
+                description:
+                  "Accurate diagnostic tools for routine patient assessment and monitoring.",
+              },
+              {
+                name: "Thermometers (Digital & Infrared)",
+                description:
+                  "Fast and reliable temperature measurement devices for all patient categories.",
+              },
+              {
+                name: "Pulse Oximeters",
+                description:
+                  "Non-invasive devices for continuous monitoring of oxygen saturation and pulse rate.",
+              },
+              {
+                name: "Suction Machines and Accessories",
+                description:
+                  "Portable and wall-mounted systems for airway clearance and surgical support.",
+              },
+              {
+                name: "Nebulizers and Respiratory Aids",
+                description:
+                  "Used for effective medication delivery to patients with respiratory conditions.",
+              },
+              {
+                name: "Hospital Furniture Accessories",
+                description:
+                  "IV stands, overbed tables, patient stools, bedpans, and urinals to enhance patient comfort and mobility.",
+              },
+              {
+                name: "Disposable Medical Supplies",
+                description:
+                  "Gloves, masks, gowns, syringes, catheters, and more to ensure infection control and clinical hygiene.",
+              },
+              {
+                name: "Wound Care Accessories",
+                description:
+                  "Dressing materials, adhesive bandages, antiseptic solutions, and surgical tapes.",
+              },
+              {
+                name: "Mobility Aids",
+                description:
+                  "Walkers, wheelchairs, crutches, and walking sticks for patient rehabilitation and movement support.",
+              },
+            ],
+          },
+        },
+        4: {
+          title: "Rental Medical Equipment",
+          category: "Patient Support & Home Care",
+          images: [
+            "https://example.com/images/rental_1.jpg",
+            "https://example.com/images/rental_2.jpg",
+            "https://example.com/images/rental_3.jpg",
+            "https://example.com/images/rental_4.jpg",
+          ],
+          headline: "Flexible Rental Solutions for Medical Equipment",
+          description: `We provide rental medical equipment solutions to support patients, caregivers, and healthcare facilities with flexible, affordable access to high-quality devices. Our rental services are ideal for short-term recovery, home care, post-operative needs, or palliative care.`,
+          equipmentDetails: {
+            title: "Available Rental Equipment",
+            items: [
+              {
+                name: "Hospital Beds (Manual & Motorized)",
+                description:
+                  "Comfortable, adjustable beds with safety rails for home care and long-term use.",
+              },
+              {
+                name: "Oxygen Concentrators & Cylinders",
+                description:
+                  "Reliable oxygen therapy solutions for patients with respiratory conditions.",
+              },
+              {
+                name: "BiPAP & CPAP Machines",
+                description:
+                  "Essential breathing support devices for patients with sleep apnea or chronic respiratory disorders.",
+              },
+              {
+                name: "Wheelchairs & Mobility Aids",
+                description:
+                  "Includes standard, reclining, and commode wheelchairs, walkers, and crutches.",
+              },
+              {
+                name: "Suction Machines",
+                description:
+                  "Portable units for airway clearance in home or outpatient settings.",
+              },
+              {
+                name: "Air Mattresses & Anti-Bedsore Mattresses",
+                description:
+                  "Designed to improve circulation and prevent pressure ulcers for bedridden patients.",
+              },
+              {
+                name: "Nebulizers & Steam Inhalers",
+                description:
+                  "Effective devices for respiratory therapy in children and adults.",
+              },
+              {
+                name: "Patient Lifts & Transfer Aids",
+                description:
+                  "Safe lifting solutions to assist with patient mobility and caregiver convenience.",
+              },
+            ],
+          },
         },
         5: {
-          title: "Hospital Furniture",
-          category: "Patient Care & Mobility",
-          images: [
-            "https://www.shimadzu.com/an/products/medical/img/xray_top.jpg", // Replace with actual hospital furniture images
-            "https://www.shimadzu.com/an/products/medical/img/xray_side.jpg",
-            "https://www.shimadzu.com/an/products/medical/img/xray_console.jpg",
-            "https://www.shimadzu.com/an/products/medical/img/xray_tech.jpg",
-          ],
-          headline:
-            "Durable & Comfortable Hospital Furniture for Patient and Staff Needs",
-          description: `Discover a wide variety of hospital furniture built for durability, 
-comfort, and ease of use. Our offerings include hospital beds (manual and electric), 
-examination tables, overbed tables, stretchers, wheelchairs, and bedside lockers. 
-Designed to improve patient care and hospital workflow.`,
-          keywords: [
-            "hospital furniture",
-            "patient beds",
-            "hospital trolleys",
-            "medical stretchers",
-          ],
-        },
-        6: {
-          title: "Radiology Equipment",
-          category: "Medical Imaging",
-          images: [
-            "https://www.shimadzu.com/an/products/medical/img/xray_top.jpg", // Replace with actual radiology equipment images
-            "https://www.shimadzu.com/an/products/medical/img/xray_side.jpg",
-            "https://www.shimadzu.com/an/products/medical/img/xray_console.jpg",
-            "https://www.shimadzu.com/an/products/medical/img/xray_tech.jpg",
-          ],
-          headline:
-            "Accurate Diagnostic Imaging with Advanced Radiology Equipment",
-          description: `We supply high-precision radiology equipment including X-ray machines, 
-ultrasound scanners, CT systems, and digital imaging solutions. These machines deliver clear, 
-fast, and reliable diagnostics, making them essential for radiology departments and 
-diagnostic centers.`,
-          keywords: [
-            "radiology equipment",
-            "medical imaging devices",
-            "X-ray machines",
-            "diagnostic ultrasound",
-          ],
-        },
+  "title": "Neonatal Intensive Care Unit (NICU)",
+  "category": "Medical Infrastructure",
+  "images": [
+    "https://example.com/images/nicu_1.jpg",
+    "https://example.com/images/nicu_2.jpg"
+  ],
+  "headline": "Advanced Critical Care for Newborns",
+  "description": "Our Neonatal Intensive Care Units (NICUs) are designed to provide specialized, round-the-clock care for premature and critically ill newborns. Equipped with cutting-edge technology and staffed by trained neonatologists and NICU nurses, our units ensure the highest standards of safety, monitoring, and recovery support.",
+  "equipmentDetails": {
+    "title": "Key NICU Components",
+    "items": [
+      {
+        "name": "Neonatal Incubators",
+        "description": "Maintain a stable thermal environment with humidity and oxygen control to support premature infants."
+      },
+      {
+        "name": "Phototherapy Units",
+        "description": "Used for the treatment of neonatal jaundice with safe, effective light therapy systems."
+      },
+      {
+        "name": "Infant Warmers",
+        "description": "Open-care radiant warmers for immediate access during procedures while maintaining optimal temperature."
+      },
+      {
+        "name": "Ventilators & CPAP Systems",
+        "description": "Respiratory support for neonates with underdeveloped lungs or breathing difficulties."
+      },
+      {
+        "name": "Patient Monitoring Systems",
+        "description": "Continuous tracking of heart rate, oxygen levels, temperature, and respiration for every infant."
+      },
+      {
+        "name": "NICU-Grade Suction & Infusion Pumps",
+        "description": "Precision fluid delivery and suction systems tailored for neonatal care requirements."
+      },
+      {
+        "name": "Infection Control & Isolation Zones",
+        "description": "Strict hygiene protocols and controlled environments to minimize infection risks."
+      },
+      {
+        "name": "Family-Centered Care Zones",
+        "description": "Spaces designed to allow safe parental access and involvement in neonatal care and bonding."
+      }
+    ]
+  }
+}
+,
+
+        6:{
+  "title": "Hospital Furniture",
+  "category": "Furniture & Interiors",
+  "images": [
+    "https://example.com/images/hospital_furniture_1.jpg",
+    "https://example.com/images/hospital_furniture_2.jpg",
+    "https://example.com/images/hospital_furniture_3.jpg"
+  ],
+  "headline": "Ergonomic, Durable, and Hygienic Furniture for Modern Healthcare Facilities",
+  "description": "We provide a wide range of ergonomically designed, durable, and hygienic hospital furniture to ensure patient comfort, staff efficiency, and optimal healthcare delivery. Our furniture solutions are ideal for hospitals, clinics, diagnostic centers, and home care settings.",
+  "equipmentDetails": {
+    "title": "Key Products",
+    "items": [
+      {
+        "name": "Patient Beds (Manual, Semi-Fowler, Full Fowler, ICU Beds)",
+        "description": "Designed for patient comfort and clinical functionality, with features like height adjustment, tilting, side rails, and wheels."
+      },
+      {
+        "name": "Bedside Lockers & Overbed Tables",
+        "description": "Essential for patient convenience, allowing secure storage and easy access to personal belongings, food, and medicines."
+      },
+      {
+        "name": "Examination Tables & Stretchers",
+        "description": "Sturdy and easy-to-clean surfaces for outpatient examinations, minor procedures, and patient transport."
+      },
+      {
+        "name": "Wheelchairs & Commodes",
+        "description": "Available in various models to support patient mobility and hygiene with comfort and ease."
+      },
+      {
+        "name": "Attendant & Visitor Chairs",
+        "description": "Comfortable and space-saving seating options for guests and family members in waiting or patient rooms."
+      },
+      {
+        "name": "Instrument & Dressing Trolleys",
+        "description": "Stainless steel trolleys for organized and sterile transportation of instruments, dressings, and medical supplies."
+      },
+      {
+        "name": "Crash Carts",
+        "description": "Equipped with emergency tools and medications for rapid response in critical care scenarios."
+      },
+      {
+        "name": "Delivery Beds & Obstetric Furniture",
+        "description": "Designed to support safe, comfortable, and efficient labor and delivery care."
+      },
+      {
+        "name": "Medical Workstations & Cabinets",
+        "description": "Functional furniture for nursing stations, medication preparation, and secure storage."
+      }
+    ]
+  }
+}
+,
+
         7: {
-          title: "Medical Accessories",
-          category: "General Medical Supplies",
-          images: [
-            "https://www.shimadzu.com/an/products/medical/img/accessory_1.jpg", // Replace with accurate URLs if needed
-            "https://www.shimadzu.com/an/products/medical/img/accessory_2.jpg",
-            "https://www.shimadzu.com/an/products/medical/img/accessory_3.jpg",
-            "https://www.shimadzu.com/an/products/medical/img/accessory_4.jpg",
-          ],
-          headline: "Essential Medical Accessories for Everyday Clinical Use",
-          description: `From syringes and stethoscopes to surgical gloves and diagnostic kits, our medical accessories 
-support daily hospital and clinic operations. All products are sourced from trusted manufacturers and comply 
-with health and safety standards.`,
-          keywords: [
-            "medical accessories",
-            "hospital supplies",
-            "disposable medical tools",
-            "clinical accessories",
-          ],
-        },
-        8: {
           title: "Medical Consumables",
-          category: "Disposable Supplies",
+          category: "Hospital Operations & Patient Care",
           images: [
-            "https://www.shimadzu.com/an/products/medical/img/consumables_1.jpg", // Replace with actual image URLs as needed
-            "https://www.shimadzu.com/an/products/medical/img/consumables_2.jpg",
-            "https://www.shimadzu.com/an/products/medical/img/consumables_3.jpg",
-            "https://www.shimadzu.com/an/products/medical/img/consumables_4.jpg",
+            "https://example.com/images/consumables_1.jpg",
+            "https://example.com/images/consumables_2.jpg",
+            "https://example.com/images/consumables_3.jpg",
+            "https://example.com/images/consumables_4.jpg",
           ],
-          headline: "High-Quality Disposable Medical Consumables",
-          description: `Ensure safety and efficiency with our full range of medical consumables including gauze, 
-bandages, IV cannulas, face masks, and syringes. These single-use items are vital for infection control 
-and patient care. Available in bulk with fast delivery.`,
-          keywords: [
-            "medical consumables",
-            "disposable hospital supplies",
-            "IV kits",
-            "clinical consumables",
-          ],
+          headline: "Complete Range of Essential Medical Consumables",
+          description: `We supply a complete range of medical consumables that are essential for daily hospital operations, clinical procedures, and patient care. Our consumables are high-quality, sterile (where required), and sourced from trusted, certified manufacturers to ensure patient safety and infection control.`,
+          equipmentDetails: {
+            title: "Key Medical Consumables Include",
+            items: [
+              {
+                name: "Personal Protective Equipment (PPE)",
+                description:
+                  "Masks, gloves, gowns, face shields, caps, and shoe covers to protect patients and healthcare workers.",
+              },
+              {
+                name: "Surgical Consumables",
+                description:
+                  "Sterile drapes, sutures, blades, surgical gowns, and disposable forceps used in operating theatres and minor procedures.",
+              },
+              {
+                name: "Injection & Infusion Products",
+                description:
+                  "Syringes, needles, IV cannulas, IV sets, infusion bags, and blood collection tubes.",
+              },
+              {
+                name: "Wound Care Products",
+                description:
+                  "Gauze, bandages, adhesive tapes, antiseptic wipes, cotton rolls, and advanced wound dressings.",
+              },
+              {
+                name: "Diagnostic Consumables",
+                description:
+                  "Test strips, swabs, sample containers, and urine bags for clinical laboratory use and diagnostics.",
+              },
+              {
+                name: "Respiratory Care Items",
+                description:
+                  "Nebulizer kits, oxygen masks, nasal cannulas, and ventilator circuits.",
+              },
+              {
+                name: "Urology and Catheterization Products",
+                description:
+                  "Foley catheters, urine bags, condom catheters, and lubricating jelly.",
+              },
+              {
+                name: "Disinfection & Cleaning Supplies",
+                description:
+                  "Alcohol swabs, hand sanitizers, surface disinfectants, and sterile wipes.",
+              },
+              {
+                name: "General Use Items",
+                description:
+                  "Bedpans, disposable sheets, tongue depressors, thermometers, and specimen containers.",
+              },
+            ],
+          },
         },
+        8:{
+  "title": "Biomedical Service Contact",
+  "category": "Services & Support",
+  "images": [
+    "https://example.com/images/biomedical_service_1.jpg",
+    "https://example.com/images/biomedical_service_2.jpg"
+  ],
+  "headline": "Expert Maintenance, Calibration & Repair of Medical Equipment",
+  "description": "Our Biomedical Service Team provides expert support for the maintenance, calibration, and repair of all medical and diagnostic equipment. We ensure optimal equipment performance, patient safety, and compliance with healthcare standards.",
+  "equipmentDetails": {
+    "title": "Key Services Offered",
+    "items": [
+      {
+        "name": "Preventive Maintenance & Annual Service Contracts",
+        "description": "Scheduled servicing to reduce downtime and extend equipment lifespan with full documentation and compliance tracking."
+      },
+      {
+        "name": "Equipment Installation & Commissioning",
+        "description": "Professional installation, integration, and validation of new equipment for safe and efficient operation."
+      },
+      {
+        "name": "On-Call Troubleshooting & Emergency Repairs",
+        "description": "Quick response services for urgent technical faults, minimizing operational disruptions."
+      },
+      {
+        "name": "Calibration & Certification",
+        "description": "Precision calibration of equipment with certification to meet regulatory and quality assurance standards."
+      },
+      {
+        "name": "Spare Parts & Component Replacement",
+        "description": "Provision and fitting of genuine OEM parts to maintain or restore equipment performance."
+      }
+    ]
+  }
+}
+,
         9: {
-          title: "Medical Gas Pipeline",
-          category: "Infrastructure Solutions",
+          title: "Operation Theatre (OT) Equipment",
+          category: "Medical Equipment",
           images: [
-            "https://www.shimadzu.com/an/products/medical/img/gaspipeline_1.jpg", // Replace with actual image URLs if needed
-            "https://www.shimadzu.com/an/products/medical/img/gaspipeline_2.jpg",
-            "https://www.shimadzu.com/an/products/medical/img/gaspipeline_3.jpg",
-            "https://www.shimadzu.com/an/products/medical/img/gaspipeline_4.jpg",
+            "https://example.com/images/ot_equipment_1.jpg",
+            "https://example.com/images/ot_equipment_2.jpg",
           ],
-          headline: "Safe & Compliant Medical Gas Pipeline Installations",
-          description: `We specialize in the design, installation, and maintenance of medical gas pipeline systems (MGPS). 
-Ensure seamless delivery of oxygen, nitrous oxide, vacuum, and compressed air with our compliant and certified systems, 
-suitable for hospitals, ICUs, and OTs.`,
-          keywords: [
-            "medical gas pipeline",
-            "MGPS installation",
-            "hospital oxygen pipeline",
-            "medical gas system",
+          headline: "Precision Surgical Equipment for Advanced Patient Care",
+          description: `Our Operation Theatres are fully equipped with advanced surgical technology to support a wide range of procedures with precision, safety, and efficiency. Each component is selected to meet international standards and ensure the best outcomes for both patients and surgeons.`,
+          equipmentDetails: [
+            {
+              name: "Operating Tables (Manual & Motorized)",
+              description:
+                "Adjustable tables designed for various surgical positions, ensuring patient comfort and surgeon accessibility.",
+            },
+            {
+              title: "Surgical Lights (Ceiling & Mobile)",
+              description:
+                "Shadow-free, high-intensity LED lights that provide clear visibility of the surgical site, essential for accurate procedures.",
+            },
+            {
+              title: "Anesthesia Workstations",
+              description:
+                "Integrated systems for delivering safe and controlled anesthesia, with real-time monitoring and safety alarms.",
+            },
+            {
+              title: "Electrosurgical Units (ESU)",
+              description:
+                "Used for cutting and coagulating tissue with precision, minimizing blood loss during surgery.",
+            },
+            {
+              title: "Suction Machines (Portable & Wall-Mounted)",
+              description:
+                "Essential for fluid removal from surgical sites, supporting a clean and controlled environment.",
+            },
+            {
+              title: "Patient Monitors",
+              description:
+                "Continuous monitoring of ECG, blood pressure, oxygen saturation, temperature, and other vital parameters.",
+            },
+            {
+              title: "Defibrillators",
+              description:
+                "Life-saving equipment for managing intraoperative cardiac emergencies.",
+            },
+            {
+              title: "Endoscopy & Laparoscopy Systems",
+              description:
+                "Advanced minimally invasive systems with HD imaging for gastrointestinal, gynecological, and urological procedures.",
+            },
+            {
+              title: "Sterile Storage Units & Instrument Trolleys",
+              description:
+                "Designed to maintain sterile conditions and streamline surgical workflows.",
+            },
+            {
+              title: "Autoclaves & Sterilizers",
+              description:
+                "Critical for sterilizing instruments and maintaining aseptic conditions within the OT.",
+            },
           ],
         },
         10: {
-          title: "Rental Medical Equipment",
-          category: "Medical Equipment Rental",
+          title: "Turnkey Projects",
+          category: "Healthcare Infrastructure Solutions",
           images: [
-            "https://example.com/images/rental_equipment_1.jpg", // Replace with real URLs if you have
-            "https://example.com/images/rental_equipment_2.jpg",
-            "https://example.com/images/rental_equipment_3.jpg",
-            "https://example.com/images/rental_equipment_4.jpg",
-          ],
-          headline: "Affordable Rental Solutions for Short-Term Medical Needs",
-          description: `Rent top-quality medical equipment including oxygen concentrators, ventilators, hospital beds, and wheelchairs. 
-Our rental plans are ideal for home care or temporary hospital expansion, ensuring flexibility and cost-effectiveness without compromising quality.`,
-          keywords: [
-            "medical equipment rental",
-            "hospital bed on rent",
-            "rent oxygen concentrator",
-            "home care equipment",
-          ],
-        },
-        11: {
-          title: "Biomedical Service Contract",
-          category: "Biomedical Equipment Maintenance",
-          images: [
-            "https://example.com/images/biomedical_service_1.jpg",
-            "https://example.com/images/biomedical_service_2.jpg",
-            "https://example.com/images/biomedical_service_3.jpg",
-            "https://example.com/images/biomedical_service_4.jpg",
+            "https://example.com/images/turnkey_1.jpg",
+            "https://example.com/images/turnkey_2.jpg",
+            "https://example.com/images/turnkey_3.jpg",
           ],
           headline:
-            "Annual Biomedical Equipment Maintenance Contracts (AMC/CMC)",
-          description: `Our biomedical service contracts ensure the longevity and performance of your medical devices. 
-We offer preventive maintenance, calibration, and repair services by certified technicians to minimize downtime and meet compliance standards.`,
-          keywords: [
-            "biomedical service contract",
-            "AMC for hospital equipment",
-            "medical equipment maintenance",
+            "Complete Healthcare Facility Solutions from Concept to Completion",
+          description: `We offer comprehensive turnkey solutions for hospitals, clinics, laboratories, and healthcare centers — from concept to completion. Our team handles every stage of the project, ensuring a fully functional, ready-to-use facility delivered on time and within budget.`,
+          equipmentDetails: {
+            title: "Turnkey Project Services Include",
+            items: [
+              {
+                name: "Planning & Design",
+                description:
+                  "Customized architectural layouts, 3D visualizations, and space optimization based on client needs and clinical workflow.",
+              },
+              {
+                name: "Medical Equipment Supply & Installation",
+                description:
+                  "End-to-end procurement, delivery, and setup of diagnostic, surgical, ICU, and laboratory equipment from trusted global brands.",
+              },
+              {
+                name: "Electrical, HVAC & Plumbing Works",
+                description:
+                  "Complete MEP (Mechanical, Electrical, Plumbing) services, including cleanroom and negative pressure systems where required.",
+              },
+              {
+                name: "Modular Operation Theatres & ICUs",
+                description:
+                  "Installation of advanced, sterile, and modular OT and ICU setups with integrated systems and smart controls.",
+              },
+              {
+                name: "Furniture & Fixtures",
+                description:
+                  "Supply and installation of hospital-grade furniture, storage, counters, and workstations tailored for functionality and hygiene.",
+              },
+              {
+                name: "IT & Networking Solutions",
+                description:
+                  "Hospital Management Systems (HMS), nurse call systems, telemedicine setup, biometric access, and CCTV surveillance.",
+              },
+              {
+                name: "Biomedical Integration & Compliance",
+                description:
+                  "Equipment calibration, validation, and documentation to meet NABH, ISO, and other healthcare regulatory standards.",
+              },
+              {
+                name: "Training & Handover",
+                description:
+                  "On-site training for staff and complete documentation for smooth facility handover and independent operation.",
+              },
+            ],
+          },
+        },
+        11: {
+          title: "Home Care Support",
+          category: "Patient Care Services",
+          images: [
+            "https://example.com/images/homecare_1.jpg",
+            "https://example.com/images/homecare_2.jpg",
+            "https://example.com/images/homecare_3.jpg",
           ],
+          headline: "Professional Healthcare Delivered Comfortably at Home",
+          description: `Our Home Care Support services are designed to bring professional healthcare to the comfort of your home. We provide personalized, compassionate, and medically supervised care for patients recovering from surgery, managing chronic illnesses, or requiring elderly or palliative care.`,
+          equipmentDetails: {
+            title: "Services Offered",
+            items: [
+              {
+                name: "Skilled Nursing Care at Home",
+                description:
+                  "Qualified nurses for wound care, injections, catheterization, IV therapy, post-operative care, and medication management.",
+              },
+              {
+                name: "Doctor Visits",
+                description:
+                  "Scheduled home visits by general physicians or specialists for ongoing medical supervision and diagnosis.",
+              },
+              {
+                name: "Physiotherapy Services",
+                description:
+                  "Tailored rehabilitation programs by certified physiotherapists to improve mobility, strength, and quality of life.",
+              },
+              {
+                name: "Caregiver and Attendant Services",
+                description:
+                  "Trained caregivers for daily assistance, hygiene support, feeding, mobility help, and companionship.",
+              },
+              {
+                name: "Home Lab Tests & Diagnostics",
+                description:
+                  "Sample collection from home for blood tests, ECG, and other basic diagnostics with reports delivered digitally.",
+              },
+              {
+                name: "Medical Equipment on Rent or Purchase",
+                description:
+                  "Delivery and setup of hospital beds, oxygen concentrators, wheelchairs, and more for home-based recovery.",
+              },
+              {
+                name: "Palliative & End-of-Life Care",
+                description:
+                  "Compassionate care focused on comfort, dignity, and emotional support for terminally ill patients and their families.",
+              },
+            ],
+          },
         },
         12: {
-          title: "Turnkey Projects",
-          category: "Healthcare Infrastructure",
+          title: "Modular Operation Theater (MOT)",
+          category: "Surgical & Critical Care Infrastructure",
           images: [
-            "https://example.com/images/turnkey_project_1.jpg",
-            "https://example.com/images/turnkey_project_2.jpg",
-            "https://example.com/images/turnkey_project_3.jpg",
-            "https://example.com/images/turnkey_project_4.jpg",
+            "https://example.com/images/mot_1.jpg",
+            "https://example.com/images/mot_2.jpg",
+            "https://example.com/images/mot_3.jpg",
+            "https://example.com/images/mot_4.jpg",
           ],
-          headline: "Complete Hospital & Clinic Setup - Turnkey Solutions",
-          description: `We handle complete healthcare infrastructure projects—from planning and equipment supply to setup and training. 
-Our turnkey projects are designed for new hospitals, clinics, diagnostics centers, and nursing homes.`,
-          keywords: [
-            "hospital turnkey project",
-            "clinic setup",
-            "complete hospital solutions",
-            "turnkey healthcare provider",
-          ],
+          headline:
+            "State-of-the-Art Surgical Environments with Hygiene and Safety",
+          description: `Our Modular Operation Theaters are state-of-the-art surgical environments designed with precision, hygiene, and safety at the core. Built using high-quality materials and integrated systems, they ensure infection control, easy maintenance, and operational efficiency in compliance with international healthcare standards.`,
+          equipmentDetails: {
+            title: "Key Features",
+            items: [
+              {
+                name: "Pre-Fabricated Wall & Ceiling Panels",
+                description:
+                  "Antibacterial, non-porous surfaces made from PPGI, HPL, or stainless steel for a sterile and seamless finish.",
+              },
+              {
+                name: "Laminar Airflow System",
+                description:
+                  "Provides a sterile airflow pattern to control airborne contaminants and ensure a dust-free surgical environment.",
+              },
+              {
+                name: "HEPA Filtration Unit",
+                description:
+                  "High-efficiency filters that remove 99.97% of particles, ensuring pure air circulation inside the OT.",
+              },
+              {
+                name: "Hermetically Sealed Sliding Doors",
+                description:
+                  "Air-tight, automatic doors to maintain positive pressure and reduce microbial entry.",
+              },
+              {
+                name: "Medical Gas Pipeline System (MGPS)",
+                description:
+                  "Integrated and concealed piping for oxygen, nitrous oxide, compressed air, and vacuum with alarm panels.",
+              },
+              {
+                name: "Integrated Ceiling-Mounted Pendants",
+                description:
+                  "Organizes medical equipment, electrical, and gas outlets for quick access and uncluttered workspace.",
+              },
+              {
+                name: "Operation Theater Control Panel",
+                description:
+                  "Centralized panel for controlling lighting, temperature, pressure, humidity, and critical alerts.",
+              },
+              {
+                name: "Shadowless Surgical Lights",
+                description:
+                  "High-intensity, adjustable LED lights for precision visibility during surgical procedures.",
+              },
+              {
+                name: "Antistatic, Seamless Flooring",
+                description:
+                  "Conductive, easy-to-clean flooring that prevents static discharge and microbial growth.",
+              },
+              {
+                name: "Pressure Relief Dampers & Exhaust Systems",
+                description:
+                  "Maintain controlled air pressure and expel used air safely, reducing contamination risk.",
+              },
+            ],
+          },
         },
         13: {
-          title: "Home Care Support",
-          category: "Home Medical Equipment",
+          title: "Radiology Equipment",
+          category: "Diagnostic Imaging Solutions",
           images: [
-            "https://example.com/images/home_care_1.jpg",
-            "https://example.com/images/home_care_2.jpg",
-            "https://example.com/images/home_care_3.jpg",
-            "https://example.com/images/home_care_4.jpg",
+            "https://example.com/images/radiology_1.jpg",
+            "https://example.com/images/radiology_2.jpg",
+            "https://example.com/images/radiology_3.jpg",
+            "https://example.com/images/radiology_4.jpg",
           ],
-          headline: "Home Medical Equipment & Support Services",
-          description: `We offer a range of medical devices and services for patients receiving treatment at home. Products include oxygen therapy units, hospital beds, mobility aids, and monitoring devices, delivered with support and setup guidance.`,
-          keywords: [
-            "home care medical equipment",
-            "patient care at home",
-            "oxygen at home",
-            "medical support services",
-          ],
+          headline: "Advanced Imaging for Accurate Diagnosis",
+          description:
+            "Our advanced Radiology Equipment portfolio supports accurate diagnosis and effective treatment planning with high-quality imaging solutions. We offer a wide range of safe, reliable, and technologically advanced systems suitable for hospitals, diagnostic centers, and clinics.",
+          equipmentDetails: {
+            title: "Key Radiology Equipment Includes",
+            items: [
+              {
+                name: "X-Ray Machines",
+                description:
+                  "Digital and analog systems for detailed imaging of bones, chest, and soft tissues with minimal radiation exposure.",
+              },
+              {
+                name: "Computed Tomography (CT) Scanners",
+                description:
+                  "High-resolution 3D imaging systems for cross-sectional views of internal anatomy, supporting complex diagnostics.",
+              },
+              {
+                name: "Magnetic Resonance Imaging (MRI) Systems",
+                description:
+                  "Non-invasive imaging with superior soft tissue contrast for neurological, cardiovascular, and musculoskeletal evaluations.",
+              },
+              {
+                name: "Ultrasound Machines",
+                description:
+                  "Real-time imaging for obstetrics, gynecology, cardiology, and general abdominal diagnostics. Available in portable and console models.",
+              },
+              {
+                name: "Mammography Units",
+                description:
+                  "Specialized X-ray systems designed for the early detection and diagnosis of breast cancer with high accuracy.",
+              },
+              {
+                name: "Fluoroscopy Systems",
+                description:
+                  "Live imaging systems for real-time diagnostics and procedural guidance in various medical applications.",
+              },
+              {
+                name: "Portable & Mobile Imaging Systems",
+                description:
+                  "Versatile units for bedside and off-site imaging needs, ensuring continuity of care in any setting.",
+              },
+              {
+                name: "Radiology Accessories & Consumables",
+                description:
+                  "Includes essential items like lead aprons, contrast injectors, imaging plates, and film processing tools.",
+              },
+            ],
+          },
         },
         14: {
-          title: "Modular Operation Theatre",
-          category: "Operation Theatre Solutions",
+          title: "Medical Gas Pipeline System (MGPS)",
+          category: "Infrastructure & Critical Care Support",
           images: [
-            "https://example.com/images/modular_ot_1.jpg",
-            "https://example.com/images/modular_ot_2.jpg",
-            "https://example.com/images/modular_ot_3.jpg",
-            "https://example.com/images/modular_ot_4.jpg",
+            "https://example.com/images/mgps_1.jpg",
+            "https://example.com/images/mgps_2.jpg",
+            "https://example.com/images/mgps_3.jpg",
+            "https://example.com/images/mgps_4.jpg",
           ],
-          headline: "Custom-Designed Modular Operation Theatres (MOT)",
-          description: `Our modular operation theatres are built using high-grade, antimicrobial panels and are integrated with laminar airflow systems, medical gas pipelines, and advanced lighting. Designed for infection control, ease of maintenance, and surgical efficiency.`,
-          keywords: [
-            "modular operation theatre",
-            "MOT setup",
-            "modular OT design",
-            "hospital operation theatre",
-          ],
+          headline: "Safe and Efficient Delivery of Medical Gases",
+          description: `Our Medical Gas Pipeline System (MGPS) is designed to safely and efficiently deliver medical gases throughout healthcare facilities, ensuring uninterrupted supply for critical patient care areas such as operation theaters, ICUs, wards, and emergency rooms.`,
+          equipmentDetails: {
+            title: "Key Features",
+            items: [
+              {
+                name: "Comprehensive Gas Supply",
+                description:
+                  "Provides essential gases including oxygen, nitrous oxide, medical air, vacuum, carbon dioxide, and nitrogen.",
+              },
+              {
+                name: "High-Quality Piping & Materials",
+                description:
+                  "Uses corrosion-resistant, stainless steel or copper piping with seamless joints to maintain purity and prevent leaks.",
+              },
+              {
+                name: "Centralized Gas Source with Backup",
+                description:
+                  "Equipped with primary and secondary gas sources, including cylinder manifolds and bulk liquid storage, ensuring continuous availability.",
+              },
+              {
+                name: "Zone Valves & Alarm Systems",
+                description:
+                  "Strategic zone isolation valves for quick shutoff and advanced alarm panels to monitor pressure, flow, and detect faults instantly.",
+              },
+              {
+                name: "Point-of-Use Outlets",
+                description:
+                  "User-friendly wall-mounted or ceiling-mounted outlets for safe and easy access to medical gases at the bedside or OT.",
+              },
+              {
+                name: "Regulatory Compliance & Safety",
+                description:
+                  "Designed and installed as per international standards (HTM, NFPA, ISO) to ensure patient safety and system reliability.",
+              },
+              {
+                name: "Installation & Maintenance Services",
+                description:
+                  "Complete turnkey installation, testing, commissioning, and regular preventive maintenance to keep the system operating flawlessly.",
+              },
+            ],
+          },
         },
       };
 

@@ -2331,7 +2331,50 @@ body {
 
 
 
+/* Equipment Details Section */
+.equipment-details {
+  margin-top: 2rem;
+}
 
+.equipment-details h3 {
+  color: #55518E;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #4BC2BA;
+}
+
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.equipment-item {
+  background: #f9f9f9;
+  padding: 1.2rem;
+  border-radius: 8px;
+  border-left: 4px solid #4BC2BA;
+}
+
+.equipment-item h4 {
+  color: #55518E;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.equipment-item p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .equipment-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 
 

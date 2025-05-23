@@ -2203,7 +2203,7 @@ body {
   }
 }
 
-@media (max-width: 316px) {
+@media (max-width: 375px) {
   .hero-content h1 .part1 {
     font-size: 4rem;
     margin-bottom: -15px;

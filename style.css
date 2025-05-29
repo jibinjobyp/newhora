@@ -2320,6 +2320,14 @@ body {
   
 }
 
+@media (min-width:1200px) and (max-width:1365px) {
+  .hero-content h1 .part1 {
+    
+    line-height: 120px;
+  }
+}
+
+
 
 
 

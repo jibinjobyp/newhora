@@ -66,7 +66,8 @@
           </div>
 
           <div class="contact-form">
-            <form id="contactForm">
+            <form id="contactForm" action="https://formspree.io/f/mnnvpdaq"
+  method="POST">
               <div class="form-group">
                 <label for="name">Full Name</label>
                 <input
@@ -83,6 +84,7 @@
                   id="email"
                   placeholder="Enter your email"
                   required
+                  name="email"
                 />
               </div>
               <div class="form-group">
@@ -92,6 +94,7 @@
                   rows="5"
                   placeholder="Write your message here..."
                   required
+                  name="message"
                 ></textarea>
               </div>
               <button type="submit" class="submit-btn">Send Message</button>

@@ -2645,3 +2645,9 @@ body {
     box-sizing: border-box;
   }
 }
+
+
+#email{
+
+  text-transform: lowercase;
+}
